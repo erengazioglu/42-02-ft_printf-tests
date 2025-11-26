@@ -5,12 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/25 15:01:17 by egaziogl          #+#    #+#             */
-/*   Updated: 2025/11/25 15:03:43 by egaziogl         ###   ########.fr       */
+/*   Created: 2025/11/26 11:48:01 by egaziogl          #+#    #+#             */
+/*   Updated: 2025/11/26 11:57:46 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "../include/tests.h"
 
 int	main(void)
 {
