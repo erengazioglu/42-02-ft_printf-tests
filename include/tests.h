@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/26 11:48:33 by egaziogl          #+#    #+#             */
-/*   Updated: 2025/11/28 13:42:20 by egaziogl         ###   ########.fr       */
+/*   Updated: 2025/11/28 18:07:21 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,19 +22,21 @@
 #  define run_test(fstr, ...) \
 	do { \
 		int len = ft_printf(fstr, __VA_ARGS__); \
-		printf("(len: %d)\n", len); \
+		ft_printf(" (len: %d)\n", len); \
+		fflush(stdout); \
 	} while (0)
 # else
 #  define run_test(fstr, ...) \
 	do { \
 		int len = printf(fstr, __VA_ARGS__); \
 		printf(" (len: %d)\n", len); \
+		fflush(stdout); \
 	} while (0)
 # endif
 
 typedef int (*p_func)(const char *, ...);
 
-extern void test_suite(p_func func);
+extern void test_suite(void);
 // void	run_test(p_func func, const char *fstr, ...);
 
 #endif

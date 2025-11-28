@@ -29,15 +29,7 @@ $(TESTS): $(TESTS:%=obj/%.o) $(LIB_DIR)/$(LIB_NAME) $(SRC:%.c=obj/%.o)
 	$(CC) $(CFLAGS) -DUSE_CUSTOM $^ -o bin/user.out
 	bin/user.out > result/user.txt
 
-$(TESTS_BONUS): $(TESTS_BONUS:%=result/%_expected.txt) $(TESTS_BONUS:%=result/%_user.txt)
-	mkdir -p bin result
-	
-# 	$(CC) $(CFLAGS) -c src/$@.c -o obj/$@_expected.o
-# 	$(CC) $(CFLAGS) $(SRC:%.c=obj/%.o) obj/$@_expected.o $^ obj -o bin/$@_expected.out
-# 	bin/$@_expected.out > result/$@_expected.txt
-# 	$(CC) $(CFLAGS) -DUSE_CUSTOM -c src/$@.c -o obj/$@_user.o
-# 	$(CC) $(CFLAGS) $(SRC:%.c=obj/%.o) obj/$@_user.o $^ obj -o bin/$@_user.out
-# 	bin/user.out > result/user.txt
+$(TESTS_BONUS): $(TESTS_BONUS:%=result/%_diff.txt)
 
 obj/%.o: src/%.c
 	mkdir -p obj
@@ -50,28 +42,19 @@ obj/%_user.o: src/%.c $(INCLUDE)
 	mkdir -p obj
 	$(CC) $(CFLAGS) -DUSE_CUSTOM -c $< -o $@
 bin/%_expected.out: obj/%_expected.o $(LIB_DIR)/$(LIB_NAME) $(SRC:%.c=obj/%.o)
+	mkdir -p bin
 	$(CC) $(CFLAGS) $^ -o $@
 bin/%_user.out: obj/%_user.o $(LIB_DIR)/$(LIB_NAME) $(SRC:%.c=obj/%.o)
+	mkdir -p bin
 	$(CC) $(CFLAGS) $^ -o $@
-result/%_expected.txt: bin/%_user.out
+result/%_expected.txt: bin/%_expected.out
+	mkdir -p result
 	$^ > $@
 result/%_user.txt: bin/%_user.out
+	mkdir -p result
 	$^ > $@
-# OBJ = $(SRC:%.c:obj/%.o)
-# OBJ_BONUS = $(SRC_BONUS:%.c:obj/%.o)
-
-
-# all: 		mandatory bonus
-
-# mandatory:	${OBJ} ${LIB_DIR}/${LIB_NAME}
-# 	$(CC) $(CFLAGS) $^ -o $@
-# #	build main for each obj:
-
-# bonus:		${OBJ_BONUS} ${LIB_DIR}/${LIB_NAME}
-
-# obj/%.o: %.c
-# 	mkdir -p obj
-# 	$(CC) $(CFLAGS) -c $^ -o $@
+result/%_diff.txt: result/%_expected.txt result/%_user.txt
+	diff -u $^ &2>1
 
 ${LIB_DIR}/${LIB_NAME}:
 	make -C $(LIB_DIR)

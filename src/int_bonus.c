@@ -6,15 +6,16 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/25 15:01:17 by egaziogl          #+#    #+#             */
-/*   Updated: 2025/11/28 12:16:17 by egaziogl         ###   ########.fr       */
+/*   Updated: 2025/11/28 19:40:28 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/tests.h"
 
-void	test_suite(p_func func)
+void	test_suite(void)
 {
-	func("---\nINTS (Bonus)\n");
+	printf("---\nINTS (Bonus)\n");
+	fflush(stdout);
 	run_test("test 1: %d hey", -424242);
 	run_test("test 2: %20d hey", -424242);
 	run_test("test 3: %-20d hey", -424242);
