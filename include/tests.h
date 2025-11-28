@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/26 11:48:33 by egaziogl          #+#    #+#             */
-/*   Updated: 2025/11/28 12:14:20 by egaziogl         ###   ########.fr       */
+/*   Updated: 2025/11/28 13:42:20 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@
 #  define run_test(fstr, ...) \
 	do { \
 		int len = printf(fstr, __VA_ARGS__); \
-		printf("(len: %d)\n", len); \
+		printf(" (len: %d)\n", len); \
 	} while (0)
 # endif
 
