@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/25 15:01:17 by egaziogl          #+#    #+#             */
-/*   Updated: 2025/11/26 14:39:53 by egaziogl         ###   ########.fr       */
+/*   Updated: 2025/11/28 12:16:17 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,27 +14,22 @@
 
 void	test_suite(p_func func)
 {
-	func("---\nINTS (Bonus)\n")
-	run_test(func, "test 1: %d hey\n", -424242);
-	run_test(func, "test 2: %20d hey\n", -424242);
-	run_test(func, "test 3: %-20d hey\n", -424242);
-	run_test(func, "test 4: %.5d hey\n", -424242);
-	run_test(func, "test 5: %20.5d hey\n", -424242);
-	run_test(func, "test 6: %020.8d hey\n", -424242);
-	run_test(func, "test 7: % d hey\n", -424242);
-	run_test(func, "test 8a: %020d hey\n", INT_MIN);
-	run_test(func, "test 8b: %020.20d hey\n", INT_MIN);
-	run_test(func, "test 8c: %020.19d hey\n", INT_MIN);
-	run_test(func, "test 8d: %020.18d hey\n", INT_MIN);
-	run_test(func, "test 8e: %9.5d hey\n", -40);
-	run_test(func, "test 9a: %020d hey\n", INT_MAX);
-	run_test(func, "test 9b: %020.20d hey\n", INT_MAX);
-	run_test(func, "test 9c: %020.19d hey\n", INT_MAX);
-	run_test(func, "test 9d: %020.18d hey\n", INT_MAX);
-	run_test(func, "test 9e: %9.5d hey\n", 40);
-}
-
-int	main(void)
-{
-	test_suite(custom_printf);
+	func("---\nINTS (Bonus)\n");
+	run_test("test 1: %d hey", -424242);
+	run_test("test 2: %20d hey", -424242);
+	run_test("test 3: %-20d hey", -424242);
+	run_test("test 4: %.5d hey", -424242);
+	run_test("test 5: %20.5d hey", -424242);
+	run_test("test 6: %020.8d hey", -424242);
+	run_test("test 7: % d hey", -424242);
+	run_test("test 8a: %020d hey", INT_MIN);
+	run_test("test 8b: %020.20d hey", INT_MIN);
+	run_test("test 8c: %020.19d hey", INT_MIN);
+	run_test("test 8d: %020.18d hey", INT_MIN);
+	run_test("test 8e: %9.5d hey", -40);
+	run_test("test 9a: %020d hey", INT_MAX);
+	run_test("test 9b: %020.20d hey", INT_MAX);
+	run_test("test 9c: %020.19d hey", INT_MAX);
+	run_test("test 9d: %020.18d hey", INT_MAX);
+	run_test("test 9e: %9.5d hey", 40);
 }
