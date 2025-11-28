@@ -14,13 +14,16 @@ SRC			= \
 			main.c
 INCLUDE		= include/tests.h
 
+DIFF		= diff -u --color=always
+STRIP_COLOR	= sed 's/\x1b\[[0-9;]*m//g'
+
 all: mandatory bonus
 
 mandatory:	$(TESTS)
 bonus:		$(TESTS_BONUS)
 
-$(TESTS): $(TESTS:%=result/%_diff.txt)
-$(TESTS_BONUS): $(TESTS_BONUS:%=result/%_diff.txt)
+$(TESTS): $(TESTS:%=result/%.diff)
+$(TESTS_BONUS): $(TESTS_BONUS:%=result/%.diff)
 
 obj/%.o: src/%.c
 	mkdir -p obj
@@ -46,9 +49,8 @@ result/%_user.txt: bin/%_user.out
 	mkdir -p result
 	$^ > $@
 
-result/%_diff.txt: result/%_expected.txt result/%_user.txt
-	diff -u result/$*_expected.txt result/$*_user.txt 2>&1 || true
-	touch $@
+result/%.diff: result/%_expected.txt result/%_user.txt
+	$(DIFF) result/$*_expected.txt result/$*_user.txt 2>&1 | tee /dev/stderr | $(STRIP_COLOR) > $@ || true
 
 ${LIB_DIR}/${LIB_NAME}:
 	make -C $(LIB_DIR)
