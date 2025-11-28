@@ -6,10 +6,10 @@ LIB_NAME	= libftprintf.a
 
 TESTS		= \
 			char \
-			int \
-			string
+			int
 TESTS_BONUS	= \
-			int_bonus
+			int_bonus \
+			string_bonus
 SRC			= \
 			main.c
 INCLUDE		= include/tests.h
