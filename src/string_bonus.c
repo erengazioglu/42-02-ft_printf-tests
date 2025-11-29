@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/25 12:48:52 by egaziogl          #+#    #+#             */
-/*   Updated: 2025/11/28 20:52:49 by egaziogl         ###   ########.fr       */
+/*   Updated: 2025/11/29 01:58:52 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	test_suite(void)
 {
-	printf("---\nCHARS (Bonus)\n");
+	printf("---\nStrings (Bonus)\n");
 	fflush(stdout);
 	run_test("test 1: %s", "simple");
 	run_test("test 2: %20s", "FW20");

@@ -17,7 +17,14 @@ INCLUDE		= include/tests.h
 all: mandatory bonus
 
 mandatory:	$(TESTS)
+	@for test in $(TESTS); do \
+		diff -u --color=always result/$${test}_expected.txt result/$${test}_user.txt 2>&1 || true; \
+	done
+
 bonus:		$(TESTS_BONUS)
+	@for test in $(TESTS_BONUS); do \
+		diff -u --color=always result/$${test}_expected.txt result/$${test}_user.txt 2>&1 || true; \
+	done
 
 $(TESTS): %: result/%.diff
 $(TESTS_BONUS): %: result/%.diff
@@ -47,7 +54,6 @@ result/%_user.txt: bin/%_user.out
 	$^ > $@
 
 result/%.diff: result/%_expected.txt result/%_user.txt
-	@diff -u --color=always result/$*_expected.txt result/$*_user.txt 2>&1 || true
 	@diff -u result/$*_expected.txt result/$*_user.txt 2>&1 > $@ || true
 
 ${LIB_DIR}/${LIB_NAME}:
@@ -60,5 +66,6 @@ fclean: clean
 	rm -rf result
 re: fclean all
 
-.PHONY: all clean fclean re mandatory bonus $(TESTS) $(TESTS_BONUS)
-.SILENT: 
+.PHONY		: all clean fclean re mandatory bonus $(TESTS) $(TESTS_BONUS) $(LIB_DIR)/$(LIB_NAME)
+.SILENT		:
+.SECONDARY	:
