@@ -18,11 +18,13 @@ all: mandatory bonus
 
 mandatory:	$(TESTS)
 	@for test in $(TESTS); do \
+		echo "testing $${test}..."; \
 		diff -u --color=always result/$${test}_expected.txt result/$${test}_user.txt 2>&1 || true; \
 	done
 
 bonus:		$(TESTS_BONUS)
 	@for test in $(TESTS_BONUS); do \
+		echo "testing $${test}..."; \
 		diff -u --color=always result/$${test}_expected.txt result/$${test}_user.txt 2>&1 || true; \
 	done
 
