@@ -5,11 +5,13 @@ LIB_DIR		= ../02-ft_printf
 LIB_NAME	= libftprintf.a
 
 TESTS		= \
-			char
+			char \
+			hex
 TESTS_BONUS	= \
 			int_bonus \
 			string_bonus \
-			char_bonus
+			char_bonus \
+			hex_bonus
 SRC			= \
 			main.c
 INCLUDE		= include/tests.h
