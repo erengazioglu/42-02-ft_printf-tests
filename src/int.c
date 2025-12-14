@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   char.c                                             :+:      :+:    :+:   */
+/*   int.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/26 11:48:01 by egaziogl          #+#    #+#             */
-/*   Updated: 2025/12/14 12:28:24 by egaziogl         ###   ########.fr       */
+/*   Created: 2025/12/14 12:29:29 by egaziogl          #+#    #+#             */
+/*   Updated: 2025/12/14 12:32:47 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,11 @@
 
 void	test_suite(void)
 {
-	printf("---\nCHARS\n");
+	printf("---\nINTS\n");
 	fflush(stdout);
-	run_test("Test 01: %c", 'a');
-	run_test("Test 02: %c", '\t');
-	run_test("Test 03: %c", 255);
-	run_test("Test 04: %c%c", '4', '2');
-	run_test("Test 05: %c%c", '\0', 0);
-	run_test("Test 06: %cWhat happens now?", 127);
+	run_test("test 1: %d", 42);
+	run_test("test 2: %d", -42);
+	run_test("test 3: %d %d", -42, 42);
+	run_test("test 4: %d %d %d", 1, 0, -1);
+	run_test("test 5: %d %d", INT_MIN, INT_MAX);
 }

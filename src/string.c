@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   char.c                                             :+:      :+:    :+:   */
+/*   string.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/26 11:48:01 by egaziogl          #+#    #+#             */
-/*   Updated: 2025/12/14 12:28:24 by egaziogl         ###   ########.fr       */
+/*   Created: 2025/11/25 12:48:52 by egaziogl          #+#    #+#             */
+/*   Updated: 2025/12/14 13:50:51 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,10 @@
 
 void	test_suite(void)
 {
-	printf("---\nCHARS\n");
+	printf("---\nStrings\n");
 	fflush(stdout);
-	run_test("Test 01: %c", 'a');
-	run_test("Test 02: %c", '\t');
-	run_test("Test 03: %c", 255);
-	run_test("Test 04: %c%c", '4', '2');
-	run_test("Test 05: %c%c", '\0', 0);
-	run_test("Test 06: %cWhat happens now?", 127);
+	run_test("Test 1: %s", "Simple");
+	run_test("Test 2: %s%s", "Sim-", "ple");
+	run_test("Test 3: %s%s%s", "", "", "Hello");
+	// run_test("Test 4: %s%s%s", NULL, "", "Hello");
 }

@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/26 11:48:33 by egaziogl          #+#    #+#             */
-/*   Updated: 2025/11/28 18:07:21 by egaziogl         ###   ########.fr       */
+/*   Updated: 2025/12/14 13:23:01 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,19 @@
 # include <limits.h>
 # include <stdarg.h>
 # include <stdio.h>
-# include "../../02-ft_printf/libftprintf.h"
+# include "../../02-ft_printf/ft_printf.h"
 
 # ifdef USE_CUSTOM
 #  define run_test(fstr, ...) \
 	do { \
 		int len = ft_printf(fstr, __VA_ARGS__); \
-		ft_printf(" (len: %d)\n", len); \
+		printf(" (len: %d)\n", len); \
+		fflush(stdout); \
+	} while (0)
+#  define run_test_argless(fstr) \
+	do { \
+		int len = ft_printf(fstr); \
+		printf(" (len: %d)\n", len); \
 		fflush(stdout); \
 	} while (0)
 # else
@@ -32,11 +38,14 @@
 		printf(" (len: %d)\n", len); \
 		fflush(stdout); \
 	} while (0)
+#  define run_test_argless(fstr) \
+	do { \
+		int len = printf(fstr); \
+		printf(" (len: %d)\n", len); \
+		fflush(stdout); \
+	} while (0)
 # endif
 
-typedef int (*p_func)(const char *, ...);
-
 extern void test_suite(void);
-// void	run_test(p_func func, const char *fstr, ...);
 
 #endif

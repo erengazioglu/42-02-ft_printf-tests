@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   char.c                                             :+:      :+:    :+:   */
+/*   percent.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/26 11:48:01 by egaziogl          #+#    #+#             */
-/*   Updated: 2025/12/14 12:28:24 by egaziogl         ###   ########.fr       */
+/*   Created: 2025/12/14 12:20:30 by egaziogl          #+#    #+#             */
+/*   Updated: 2025/12/14 13:52:41 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,9 @@
 
 void	test_suite(void)
 {
-	printf("---\nCHARS\n");
+	printf("---\nPercent escapes\n");
 	fflush(stdout);
-	run_test("Test 01: %c", 'a');
-	run_test("Test 02: %c", '\t');
-	run_test("Test 03: %c", 255);
-	run_test("Test 04: %c%c", '4', '2');
-	run_test("Test 05: %c%c", '\0', 0);
-	run_test("Test 06: %cWhat happens now?", 127);
+	run_test_argless("Test 1: %%");
+	run_test_argless("Test 2: %%%%");
+	run_test_argless("Test 3: %% %%");
 }

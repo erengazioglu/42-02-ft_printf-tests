@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   char.c                                             :+:      :+:    :+:   */
+/*   mixed.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/26 11:48:01 by egaziogl          #+#    #+#             */
-/*   Updated: 2025/12/14 12:28:24 by egaziogl         ###   ########.fr       */
+/*   Created: 2025/12/14 13:13:56 by egaziogl          #+#    #+#             */
+/*   Updated: 2025/12/14 13:38:00 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,7 @@
 
 void	test_suite(void)
 {
-	printf("---\nCHARS\n");
+	printf("---\nMixed arguments\n");
 	fflush(stdout);
-	run_test("Test 01: %c", 'a');
-	run_test("Test 02: %c", '\t');
-	run_test("Test 03: %c", 255);
-	run_test("Test 04: %c%c", '4', '2');
-	run_test("Test 05: %c%c", '\0', 0);
-	run_test("Test 06: %cWhat happens now?", 127);
+	run_test("Test 01: %i %u %x %X", INT_MAX, INT_MAX, INT_MAX, INT_MAX);
 }

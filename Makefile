@@ -5,13 +5,21 @@ LIB_DIR		= ../02-ft_printf
 LIB_NAME	= libftprintf.a
 
 TESTS		= \
+			basic \
+			mixed \
 			char \
+			string \
+			pointer \
+			int \
+			uint \
 			hex \
-			pointer
+			percent
 TESTS_BONUS	= \
-			int_bonus \
-			string_bonus \
 			char_bonus \
+			string_bonus \
+			pointer_bonus \
+			int_bonus \
+			uint_bonus \
 			hex_bonus
 SRC			= \
 			main.c
@@ -31,8 +39,8 @@ bonus:		$(TESTS_BONUS)
 		diff -u --color=always result/$${test}_expected.txt result/$${test}_user.txt 2>&1 || true; \
 	done
 
-$(TESTS): %: result/%.diff
-$(TESTS_BONUS): %: result/%.diff
+$(TESTS): %: result/%.diff ${LIB_DIR}/${LIB_NAME}
+$(TESTS_BONUS): %: result/%.diff ${LIB_DIR}/${LIB_NAME}
 
 obj/%.o: src/%.c
 	@mkdir -p obj
