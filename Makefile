@@ -6,7 +6,8 @@ LIB_NAME	= libftprintf.a
 
 TESTS		= \
 			char \
-			hex
+			hex \
+			pointer
 TESTS_BONUS	= \
 			int_bonus \
 			string_bonus \
