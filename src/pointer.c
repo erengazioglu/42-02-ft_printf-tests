@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/12 17:02:42 by egaziogl          #+#    #+#             */
-/*   Updated: 2025/12/12 17:07:22 by egaziogl         ###   ########.fr       */
+/*   Updated: 2025/12/14 14:15:27 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	test_suite(void)
 {
-	printf("---\nPointer (lowercase)\n");
+	printf("---\nPointer\n");
 	fflush(stdout);
 
 	int i = 10;
