@@ -6,7 +6,7 @@
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/12 17:02:42 by egaziogl          #+#    #+#             */
-/*   Updated: 2025/12/14 14:15:27 by egaziogl         ###   ########.fr       */
+/*   Updated: 2025/12/14 15:22:06 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,4 +24,5 @@ void	test_suite(void)
 	run_test("Test 02: %p", &j);
 	run_test("Test 03: %p", str);
 	run_test("Test 04: %p %p", &i, &str);
+	run_test("Test 05: %p %p", (void *) 0, NULL);
 }
