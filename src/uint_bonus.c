@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   basic.c                                            :+:      :+:    :+:   */
+/*   uint_bonus.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: egaziogl <egaziogl@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/14 12:34:10 by egaziogl          #+#    #+#             */
-/*   Updated: 2025/12/14 22:01:03 by egaziogl         ###   ########.fr       */
+/*   Created: 2025/12/14 13:50:59 by egaziogl          #+#    #+#             */
+/*   Updated: 2025/12/14 23:28:58 by egaziogl         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,11 @@
 
 void	test_suite(void)
 {
-	printf("---\nBasic tests\n");
+	printf("---\nUNSIGNED INTS (Bonus)\n");
 	fflush(stdout);
-	run_test_argless("Random string");
-	// run_test_argless(NULL);
-	// run_test_argless("");
+	// run_test("Test 1: %u", 42);
+	// run_test("Test 2: %u", -42);
+	// run_test("Test 3: %u %u", -42, 42);
+	// run_test("Test 4: %u %u %u", 1, 0, -1);
+	// run_test("Test 5: %u %u %u", INT_MIN, INT_MAX, UINT_MAX);
 }

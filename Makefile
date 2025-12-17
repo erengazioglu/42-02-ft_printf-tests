@@ -1,5 +1,5 @@
 CC			= cc
-CFLAGS		= -Wall -Werror -Wextra -std=c99
+CFLAGS		= -std=c99
 
 LIB_DIR		= ../02-ft_printf
 LIB_NAME	= libftprintf.a
