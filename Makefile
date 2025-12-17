@@ -20,7 +20,8 @@ TESTS_BONUS	= \
 			pointer_bonus \
 			int_bonus \
 			uint_bonus \
-			hex_bonus
+			hex_bonus \
+			extreme
 SRC			= \
 			main.c
 INCLUDE		= include/tests.h
@@ -52,7 +53,7 @@ obj/%_user.o: src/%.c $(INCLUDE)
 	@mkdir -p obj
 	$(CC) $(CFLAGS) -DUSE_CUSTOM -c $< -o $@
 
-bin/%_expected.out: obj/%_expected.o $(LIB_DIR)/$(LIB_NAME) $(SRC:%.c=obj/%.o)
+bin/%_expected.out: obj/%_expected.o $(SRC:%.c=obj/%.o)
 	@mkdir -p bin
 	$(CC) $(CFLAGS) $^ -o $@
 bin/%_user.out: obj/%_user.o $(LIB_DIR)/$(LIB_NAME) $(SRC:%.c=obj/%.o)
