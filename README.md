@@ -2,7 +2,7 @@
 
 Rudimentary testing repo for ft_printf (42 cursus project).
 
-## How should the Makefile work
+## How the Makefile works
 
 `cc -DUSE_CUSTOM src/int_bonus.c src/run_test.c ../02-ft_printf/libftprintf.a`
 
